@@ -57,6 +57,8 @@ bool check_gamestart(void);
 
 /* 主循环 */
 void main_loop(void);
+void game_loop(void);
+void game_initial(void);
 int get_fps(void);
 void set_fps(int fps);
 int get_clock(void);
