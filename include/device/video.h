@@ -23,4 +23,14 @@ void display_buffer(void);
 
 void draw_string(const char*, int, int, int);
 
+
+/*
+ *
+ *		my func and var
+ *
+ */
+
+void draw_bomb(int x,int y);
+void draw_plane(int x,int y);
+
 #endif

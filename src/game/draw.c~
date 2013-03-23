@@ -8,7 +8,13 @@
  * draw_pixel或draw_string绘制的内容将保存在缓冲区内(暂时不会显示在屏幕上)，调用
  * display_buffer后才会显示。
 */
-
+/*
+ *
+ *		my func and var
+ *		my func and var
+ *		my func and var
+ *
+ */
 
 //绘制游戏过程屏幕
 void

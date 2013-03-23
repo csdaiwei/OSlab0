@@ -16,20 +16,21 @@
 .globl vec12; vec12: pushl $12; jmp asm_do_irq
 .globl vec13; vec13: pushl $13; jmp asm_do_irq
 
-.globl irq0; irq0: pushl $1000; jmp asm_do_irq
-.globl irq1; irq1: pushl $1001; jmp asm_do_irq
+.globl irq0; irq0: pushl $1000; jmp asm_do_irq  #0号中断，将1000放到栈中，作为时钟中断的标志（中断号）
+.globl irq1; irq1: pushl $1001; jmp asm_do_irq  #1号中断，将1001放到栈中，作为键盘中断的标志（中断号）
 
 .globl irq_empty; irq_empty: pushl $-1; jmp asm_do_irq
 
 # ！调用C编写的中断处理程序(见irq/irq_handle.c)！
 .globl asm_do_irq
 asm_do_irq:
-	pushal
+	pushal						#堆栈指令，保护所有r32(8个通用寄存器)，到此已将中断之前的现场完全保存好了。
 
-	pushl %esp
+	pushl %esp					#将原esp位置的内容赋值到当前esp( = 原esp-4)位置，作为call irq_handle的参数。其实									是指向先前栈位置的指针，可以让irq_handle找到指针位置的8个GR和1个中断号
 	call irq_handle
-	addl $4, %esp
 
-	popal
+	addl $4, %esp				#esp+4,即恢复堆栈指针位置
+
+	popal						#堆栈指令，恢复所有r32，恢复中断现场
 	addl $4, %esp
-	iret
+	iret						#interrupt return

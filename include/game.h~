@@ -23,7 +23,7 @@ typedef struct bomb_body
 }bomb_body;
 
 
-// 中断时调用的函数
+/* 中断时调用的函数 */
 void timer_event(void);
 void keyboard_event(int scan_code);
 
@@ -51,8 +51,6 @@ plane_body get_plane(void);
 int get_bomb_num(void);
 //检测撞机
 bool check_crash(void);
-//检测游戏开始
-bool check_gamestart(void);
 
 
 /* 主循环 */
@@ -63,6 +61,7 @@ int get_clock(void);
 
 
 //按键相关
+bool check_gamestart(void);
 void press_key(int scan_code);
 void release_key(int ch);
 bool query_key(int ch);

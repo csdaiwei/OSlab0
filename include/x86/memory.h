@@ -20,8 +20,8 @@ struct GateDescriptor {
 };
 
 struct TrapFrame {
-	uint32_t edi, esi, ebp, xxx, ebx, edx, ecx, eax;
-	int32_t irq;
+	uint32_t edi, esi, ebp, xxx, ebx, edx, ecx, eax;//8个通用寄存器
+	int32_t irq;//中断号
 };
 
 #endif

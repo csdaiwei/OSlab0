@@ -8,6 +8,7 @@
  * 更新屏幕的速度可能非常缓慢从而引起游戏跳帧。定义宏SLOW以只重绘屏幕变化
  * 的部分；定义宏TOOSLOW在只重绘屏幕变化部分的基础上，隔行更新。
  * TOOSLOW可能会引起视觉效果的损失。 */
+
 #define SLOW
 
 #ifdef TOOSLOW
@@ -85,4 +86,44 @@ draw_string(const char *str, int x, int y, int color) {
 		}
 	}
 }
+
+/*
+ *
+ *		my  func and var
+ *		my  func and var
+ *		my	func and var
+ *
+ */
+
+//绘制指定位置的炸弹
+void
+draw_bomb(int x,int y)
+{
+	int color = 15;
+
+	//画五个点，十字型
+	draw_pixel(x , y + 1, color);
+	draw_pixel(x + 1, y , color);
+	draw_pixel(x + 1, y + 1, color);
+	draw_pixel(x + 1, y + 2, color);
+	draw_pixel(x + 2, y + 1, color);
+
+}
+
+//绘制指定位置的飞机
+void
+draw_plane(int x,int y)
+{
+	int i,j;
+	int color = 10;
+	char *p = font_plane;
+	x = x - 3;
+	y = y - 3;//位置修正
+	for (i = 0; i < 8; i ++) 
+		for (j = 0; j < 8; j ++) 
+			if ((p[i] >> j) & 1)
+				draw_pixel(x + i, y + j, color);
+
+}
+
 

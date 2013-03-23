@@ -4,9 +4,9 @@
 # 编译器设定和编译选项
 CC = gcc
 LD = ld
-CFLAGS = -m32 -static -MD -std=gnu89 -ggdb \
+CFLAGS = -m32 -static -MD -std=gnu89 -ggdb  \
 		 -fno-builtin -fno-stack-protector -fno-omit-frame-pointer \
-		 -Wall -Werror -O2 -I./include
+		 -Wall -Werror -O2 -I./include   
 ASFLAGS = -m32 -MD
 LDFLAGS = -melf_i386
 QEMU = qemu-system-i386
