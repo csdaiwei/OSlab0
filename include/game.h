@@ -41,7 +41,6 @@ void bomb_initial(void);
 void plane_initial(void);
 //按时更新炸弹/飞机位置
 void update_bomb_pos(void);
-bool update_plane_pos(void);
 //边界/中心保护
 void protect_border(void);
 void protect_center(void);
@@ -51,8 +50,9 @@ plane_body get_plane(void);
 int get_bomb_num(void);
 //检测撞机
 bool check_crash(void);
-//检测游戏开始
-bool check_gamestart(void);
+//更新案件控制游戏
+bool keyboard_game_start(void);
+bool keyboard_plane_control(void);
 
 
 /* 主循环 */

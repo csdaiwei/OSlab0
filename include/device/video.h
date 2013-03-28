@@ -26,7 +26,7 @@ void draw_string(const char*, int, int, int);
 
 /*
  *
- *		my func and var
+ *		new func and var
  *
  */
 

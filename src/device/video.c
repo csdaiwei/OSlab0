@@ -89,9 +89,9 @@ draw_string(const char *str, int x, int y, int color) {
 
 /*
  *
- *		my  func and var
- *		my  func and var
- *		my	func and var
+ *		new  func and var
+ *		new  func and var
+ *		new	func and var
  *
  */
 

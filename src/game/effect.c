@@ -129,7 +129,7 @@ check_crash(void)
 
 //更新按键控制飞机
 bool 
-update_plane_pos(void)
+keyboard_plane_control(void)
 {
 
 	disable_interrupt();
@@ -166,7 +166,7 @@ update_plane_pos(void)
 
 //更新按键控制游戏开始
 bool
-check_gamestart(void)
+keyboard_game_start(void)
 {
 	disable_interrupt();
 	
