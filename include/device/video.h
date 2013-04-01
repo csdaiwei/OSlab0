@@ -22,6 +22,7 @@ void prepare_buffer(void);
 void display_buffer(void);
 
 void draw_string(const char*, int, int, int);
+//注意：此处没有声明draw_characters
 
 
 /*

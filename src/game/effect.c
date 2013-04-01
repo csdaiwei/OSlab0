@@ -1,7 +1,6 @@
 #include "game.h"
 #include "common.h"
 #include "string.h"
-#include "adt/linklist.h"
 #include "device/video.h"
 #include "x86/x86.h"
 #include "assert.h"
@@ -14,6 +13,7 @@ static plane_body plane;//飞机结构体（对象），结构体在game.h中定
 bomb_body
 get_bomb(int i)
 {
+	assert( i >= 0 && i < NUM);
 	return bomb[i];
 }
 

@@ -34,7 +34,7 @@ void draw_startscreen(void);
 void draw_stopscreen(void);
 
 /*
- * 游戏主逻辑相关函数
+ * 游戏效果逻辑相关函数
  */
 //数组初始化
 void bomb_initial(void);

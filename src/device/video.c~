@@ -3,7 +3,13 @@
 #include "device/video.h"
 #include "device/font.h"
 
-//#define SLOW
+/* 绘制屏幕的帧缓冲实现。
+ * 在某些版本的qemu-kvm上，由于每次访问显存映射区域都会产生一次VM exit，
+ * 更新屏幕的速度可能非常缓慢从而引起游戏跳帧。定义宏SLOW以只重绘屏幕变化
+ * 的部分；定义宏TOOSLOW在只重绘屏幕变化部分的基础上，隔行更新。
+ * TOOSLOW可能会引起视觉效果的损失。 */
+
+#define SLOW
 
 #ifdef TOOSLOW
 	#define PARTIAL_UPDATE

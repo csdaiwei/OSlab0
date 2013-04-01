@@ -43,16 +43,20 @@ main_loop(void)
 	
 	draw_startscreen();
 
-	while(TRUE)//外层循环，检测gamestart以控制游戏是否开始，永真
-	{
-		while( keyboard_game_start() )//等待键盘输入gamestart信号
+	while(TRUE)
+	{//外层循环，检测gamestart以控制游戏是否开始，永真
+
+		while( keyboard_game_start() )
 			startflag = TRUE ;
 
 		if( startflag )
-			game_initial();//游戏循环初始化	
+			game_initial();	
 
-		while ( startflag )//内层循环。用于一次游戏中响应中断和屏幕刷新，开始后仅当发生撞机时终止循环
-		{
+		//assert( tick == 0);
+
+		while ( startflag )
+		{//内层循环。用于一次游戏中响应中断和屏幕刷新，开始后仅当发生撞机时终止循环
+
 			game_loop();
 		}
 	}

@@ -14,11 +14,16 @@ draw_gamescreen()
 	plane_body np = get_plane();//now plane
 	int num = get_bomb_num();
 
+	assert( np.x != 0);
+
 	prepare_buffer(); /* 准备缓冲区 */
 	
 	for( i = 0; i < num; i++ )
 	{
 		nb = get_bomb(i);
+		
+		assert( nb.x != 0);		
+
 		x =(int) nb.x;
 		y =(int) nb.y;
 		draw_bomb(x,y);
